@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  smalltext
+
+  Created by Steven Troughton-Smith on 29/01/2021.
+  
+*/
+
+CFBundleName = "SmallText";
