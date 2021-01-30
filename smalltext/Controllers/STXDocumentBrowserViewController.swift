@@ -80,9 +80,12 @@ class STXDocumentBrowserViewController: UIDocumentBrowserViewController, UIDocum
                 
                 documentViewController.modalPresentationStyle = .overFullScreen
                 
+                STXAppDelegate.appKitController?.perform(NSSelectorFromString("showWindowForSceneIdentifier:"), with: self.view.window?.windowScene?.session.persistentIdentifier)
+
                 self.present(documentViewController, animated: animated, completion: nil)
             } else {
-                // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
+                STXAppDelegate.appKitController?.perform(NSSelectorFromString("hideWindowForSceneIdentifier:"), with: self.view.window?.windowScene?.session.persistentIdentifier)
+
             }
         })
     }

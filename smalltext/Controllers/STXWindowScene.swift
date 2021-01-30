@@ -13,6 +13,8 @@ class STXWindowScene : NSObject, UISceneDelegate, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         window = UIWindow(windowScene: scene as! UIWindowScene)
         
+        NSLog("id = \(session.persistentIdentifier)")
+        
         if let window = window {
             let documentBrowserViewController = STXDocumentBrowserViewController()
             window.rootViewController = documentBrowserViewController

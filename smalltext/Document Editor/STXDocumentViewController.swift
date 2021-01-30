@@ -73,7 +73,7 @@ class STXDocumentViewController: UIViewController, UIColorPickerViewControllerDe
         let padding = UIFloat(8)
         let topBarHeight = swatchHeight + padding * 2
         
-        let safeRect = CGRect(x: view.safeAreaInsets.left, y: view.safeAreaInsets.top, width: view.bounds.width-view.safeAreaInsets.left-view.safeAreaInsets.right, height: view.bounds.height-view.safeAreaInsets.top-view.safeAreaInsets.bottom)
+        let safeRect = view.bounds.inset(by: view.safeAreaInsets)
         let divisor = safeRect.divided(atDistance: topBarHeight, from: .minYEdge)
         
         
