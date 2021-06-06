@@ -13,8 +13,7 @@
 		B0581F3225C272C3000AEF90 /* STXDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0581F3125C272C3000AEF90 /* STXDocumentViewController.swift */; };
 		B0581F3625C276C6000AEF90 /* Number+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0581F3525C276C6000AEF90 /* Number+Scaling.swift */; };
 		B05C9E9525C4BEB8002DE786 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B05C9E9425C4BEB8002DE786 /* InfoPlist.strings */; };
-		B08BC08A25C5143D00C08C81 /* AppKitIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = B08BC08825C5143D00C08C81 /* AppKitIntegration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B08BC09625C5147100C08C81 /* AppKitIntegration.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B08BC08625C5143D00C08C81 /* AppKitIntegration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B08BC09625C5147100C08C81 /* AppKitIntegration.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B08BC08625C5143D00C08C81 /* AppKitIntegration.framework */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B08BC09925C5148200C08C81 /* AppKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08BC09825C5148200C08C81 /* AppKitController.swift */; };
 		B09299E625C394F30072E89A /* STXFontButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09299E525C394F30072E89A /* STXFontButton.swift */; };
 		B0A6BA8425C26B49007F945E /* STXAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6BA8325C26B49007F945E /* STXAppDelegate.swift */; };
@@ -56,7 +55,6 @@
 		B05C9E9425C4BEB8002DE786 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B05C9E9725C4C1A1002DE786 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B08BC08625C5143D00C08C81 /* AppKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B08BC08825C5143D00C08C81 /* AppKitIntegration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKitIntegration.h; sourceTree = "<group>"; };
 		B08BC08925C5143D00C08C81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B08BC09825C5148200C08C81 /* AppKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitController.swift; sourceTree = "<group>"; };
 		B09299E525C394F30072E89A /* STXFontButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STXFontButton.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		B08BC08725C5143D00C08C81 /* AppKitIntegration */ = {
 			isa = PBXGroup;
 			children = (
-				B08BC08825C5143D00C08C81 /* AppKitIntegration.h */,
 				B08BC09825C5148200C08C81 /* AppKitController.swift */,
 				B08BC08925C5143D00C08C81 /* Info.plist */,
 			);
@@ -177,7 +174,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B08BC08A25C5143D00C08C81 /* AppKitIntegration.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
