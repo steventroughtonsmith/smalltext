@@ -67,28 +67,18 @@ class STXDocumentBrowserViewController: UIDocumentBrowserViewController, UIDocum
 				let documentViewController = STXDocumentViewController()
 				documentViewController.document = document
 				
-				#if targetEnvironment(macCatalyst)
+#if targetEnvironment(macCatalyst)
 				self.view.window?.windowScene?.titlebar?.representedURL = document.fileURL
-				#endif
+#endif
 				self.view.window?.windowScene?.title = document.fileURL.lastPathComponent
 				
-				var animated = true
-				
-				#if targetEnvironment(macCatalyst)
-				animated = false
-				#endif
-				
+				let animated = (UIDevice.current.userInterfaceIdiom == .mac) ? false : true
+
 				documentViewController.modalPresentationStyle = .overFullScreen
-				
-				#if targetEnvironment(macCatalyst)
-				STXAppDelegate.appKitController?.perform(NSSelectorFromString("showWindowForSceneIdentifier:"), with: self.view.window?.windowScene?.session.persistentIdentifier)
-				#endif
 				
 				self.present(documentViewController, animated: animated, completion: nil)
 			} else {
-				#if targetEnvironment(macCatalyst)
-				STXAppDelegate.appKitController?.perform(NSSelectorFromString("hideWindowForSceneIdentifier:"), with: self.view.window?.windowScene?.session.persistentIdentifier)
-				#endif
+				
 			}
 		})
 	}

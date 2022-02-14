@@ -43,7 +43,9 @@ class STXAppDelegate: UIResponder, UIApplicationDelegate {
                 if let appKitControllerClass = bundle.classNamed("AppKitIntegration.AppKitController") as? NSObject.Type {
                     appKitController = appKitControllerClass.init()
                     
-                    NotificationCenter.default.addObserver(appKitController, selector: #selector(_marzipan_setupWindow(_:)), name: NSNotification.Name("UISBHSDidCreateWindowForSceneNotification"), object: nil)
+					if let appKitController = appKitController {
+						NotificationCenter.default.addObserver(appKitController, selector: #selector(_marzipan_setupWindow(_:)), name: NSNotification.Name("UISBHSDidCreateWindowForSceneNotification"), object: nil)
+					}
                 }
             }
             catch {
@@ -60,6 +62,7 @@ class STXAppDelegate: UIResponder, UIApplicationDelegate {
         #if targetEnvironment(macCatalyst)
         STXAppDelegate.loadAppKitIntegrationFramework()
         #endif
+		
         return true
     }
     

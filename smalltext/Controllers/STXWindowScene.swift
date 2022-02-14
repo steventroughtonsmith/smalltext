@@ -19,11 +19,9 @@ class STXWindowScene : NSObject, UISceneDelegate, UIWindowSceneDelegate {
             let documentBrowserViewController = STXDocumentBrowserViewController()
             window.rootViewController = documentBrowserViewController
             window.makeKeyAndVisible()
-            
-            window.backgroundColor = .white
-            
+                        
             #if targetEnvironment(macCatalyst)
-            window.windowScene?.sizeRestrictions?.minimumSize = CGSize(width: UIFloat(320), height: UIFloat(320))
+			window.windowScene?.sizeRestrictions?.minimumSize = CGSize(width: UIFloat(320), height: UIFloat(320))
             #endif
         }
     }

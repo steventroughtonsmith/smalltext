@@ -17,11 +17,11 @@ class STXColorButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            visualEffectView.backgroundColor = isHighlighted ? .systemFill : .clear
+			visualEffectView.contentView.backgroundColor = isHighlighted ? .separator : .clear
         }
     }
 
-    let visualEffectView = STXVisualEffectView(blurStyle: .prominent)
+    let visualEffectView = STXVisualEffectView(blurStyle: .systemThickMaterial)
     let colorSwatch = UIView()
     let label = UILabel()
     let glyph = UIImageView()
@@ -33,15 +33,15 @@ class STXColorButton: UIButton {
         layer.cornerCurve = .continuous
         
         glyph.contentMode = .scaleAspectFit
-        glyph.tintColor = UIColor.label.withAlphaComponent(0.5)
+        glyph.tintColor = UIColor.label
 
         colorSwatch.backgroundColor = color
         
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.opaqueSeparator.withAlphaComponent(0.2).cgColor
+        layer.borderWidth = 1.0 / UIScreen.main.scale
+        layer.borderColor = UIColor.separator.cgColor
         
-        colorSwatch.layer.borderWidth = 1
-        colorSwatch.layer.borderColor = UIColor.opaqueSeparator.withAlphaComponent(0.2).cgColor
+		colorSwatch.layer.borderWidth = 1.0 / UIScreen.main.scale
+        colorSwatch.layer.borderColor = UIColor.separator.cgColor
         colorSwatch.isUserInteractionEnabled = false
         
         addSubview(visualEffectView)
@@ -61,6 +61,13 @@ class STXColorButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+	
+	// MARK: -
+	
+	override func tintColorDidChange() {
+		colorSwatch.layer.borderColor = UIColor.separator.cgColor
+		layer.borderColor = UIColor.separator.cgColor
+	}
     
     override func layoutSubviews() {
         super.layoutSubviews()

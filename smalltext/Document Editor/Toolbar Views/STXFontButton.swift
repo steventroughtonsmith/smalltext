@@ -9,7 +9,7 @@ import UIKit
 
 class STXFontButton: UIButton {
     
-    let visualEffectView = STXVisualEffectView(blurStyle: .prominent)
+    let visualEffectView = STXVisualEffectView(blurStyle: .systemThickMaterial)
 
     let label = UILabel()
     
@@ -31,14 +31,14 @@ class STXFontButton: UIButton {
         layer.masksToBounds = true
         layer.cornerCurve = .continuous
             
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.opaqueSeparator.withAlphaComponent(0.2).cgColor
+        layer.borderWidth = 1.0 / UIScreen.main.scale
+        layer.borderColor = UIColor.separator.cgColor
         
         addSubview(visualEffectView)
         
         label.font = UIFont.systemFont(ofSize: UIFloat(13))
         label.textAlignment = .center
-        label.textColor = UIColor.label.withAlphaComponent(0.5)
+        label.textColor = UIColor.label
 
         visualEffectView.contentView.addSubview(label)
         
@@ -52,6 +52,12 @@ class STXFontButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+	
+	// MARK: -
+	
+	override func tintColorDidChange() {
+		layer.borderColor = UIColor.separator.cgColor
+	}
     
     override func layoutSubviews() {
         super.layoutSubviews()

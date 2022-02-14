@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01D61BD27BA19C6000B349C /* STXHairlineDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D61BC27BA19C6000B349C /* STXHairlineDividerView.swift */; };
 		B04A806E25C38E8200CCC1D8 /* STXVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04A806D25C38E8200CCC1D8 /* STXVisualEffectView.swift */; };
 		B04A807225C38EE600CCC1D8 /* STXColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04A807125C38EE600CCC1D8 /* STXColorButton.swift */; };
 		B0581F2C25C27281000AEF90 /* STXDocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0581F2B25C27281000AEF90 /* STXDocumentBrowserViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B01D61BC27BA19C6000B349C /* STXHairlineDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STXHairlineDividerView.swift; sourceTree = "<group>"; };
 		B04A806D25C38E8200CCC1D8 /* STXVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STXVisualEffectView.swift; sourceTree = "<group>"; };
 		B04A807125C38EE600CCC1D8 /* STXColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STXColorButton.swift; sourceTree = "<group>"; };
 		B0581F2B25C27281000AEF90 /* STXDocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STXDocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		B05C9E9B25C4C2DA002DE786 /* Toolbar Views */ = {
 			isa = PBXGroup;
 			children = (
+				B01D61BC27BA19C6000B349C /* STXHairlineDividerView.swift */,
 				B04A806D25C38E8200CCC1D8 /* STXVisualEffectView.swift */,
 				B04A807125C38EE600CCC1D8 /* STXColorButton.swift */,
 				B09299E525C394F30072E89A /* STXFontButton.swift */,
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B01D61BD27BA19C6000B349C /* STXHairlineDividerView.swift in Sources */,
 				B0581F2C25C27281000AEF90 /* STXDocumentBrowserViewController.swift in Sources */,
 				B0581F3225C272C3000AEF90 /* STXDocumentViewController.swift in Sources */,
 				B09299E625C394F30072E89A /* STXFontButton.swift in Sources */,

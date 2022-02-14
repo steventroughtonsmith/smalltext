@@ -20,15 +20,27 @@ class AppKitController : NSObject {
         
         guard let userInfo = note.userInfo, let sceneIdentifier = userInfo["SceneIdentifier"] as? String else { return }
        
-        hideWindowForSceneIdentifier(sceneIdentifier)
+		prepareWindowForSceneIdentifier(sceneIdentifier)
     }
+	
+	@objc public func prepareWindowForSceneIdentifier(_ sceneIdentifier:String) {
+		guard let appDelegate = NSApp.delegate as? NSObject else { return }
+		
+		if appDelegate.responds(to: #selector(hostWindowForSceneIdentifier(_:))) {
+			guard let hostWindow = appDelegate.hostWindowForSceneIdentifier(sceneIdentifier) else { return }
+			
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+				hostWindow.titlebarAppearsTransparent = true
+			}
+		}
+	}
     
     @objc public func hideWindowForSceneIdentifier(_ sceneIdentifier:String) {
         guard let appDelegate = NSApp.delegate as? NSObject else { return }
         
         if appDelegate.responds(to: #selector(hostWindowForSceneIdentifier(_:))) {
             guard let hostWindow = appDelegate.hostWindowForSceneIdentifier(sceneIdentifier) else { return }
-            
+   
             hostWindow.alphaValue = 0
         }
     }
